@@ -1,0 +1,8 @@
+langchain
+chromadb
+llama-index
+langchain_experimental
+langchain_openai
+langchainhub
+rich
+ollama

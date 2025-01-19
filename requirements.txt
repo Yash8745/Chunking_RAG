@@ -1,6 +1,9 @@
 langchain
+langchain-community
+langchain-core
 chromadb
 llama-index
+langchain-ollama
 langchain_experimental
 langchain_openai
 langchainhub

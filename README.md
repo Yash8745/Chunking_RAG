@@ -45,6 +45,18 @@ This project explores and tests multiple methods of text chunking using various 
    ```  
 3. View the output for each chunking method in the terminal.  
 
+## Directory Structure
+```
+chunking_rag/
+│
+├── README.md
+├── agentic_chunker.py
+├── app.py
+├── requirements.txt
+└── sample_data.txt
+```
+
+
 
 ## Chunking Methods  
 
@@ -165,6 +177,7 @@ This advanced method uses AI to extract propositions or logical segments from te
 - `AgenticChunker` or similar frameworks.  
 
 #### Example:  
+
 **Input Text**:  
 "Climate change is a global issue. Reducing emissions is crucial. Governments should enforce stricter laws."  
 
@@ -200,5 +213,4 @@ The semantic and agentic methods output chunks that align with the text's meanin
 - Integrate chunking with downstream NLP pipelines.  
 
 ## Contributing  
-
 Contributions are welcome! Please submit a pull request or open an issue to discuss any improvements or suggestions.  

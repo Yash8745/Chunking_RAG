@@ -80,5 +80,64 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=350, chunk_overlap=50)
 documents=text_splitter.create_documents([file_text],metadatas=[{"Source":"local"}])
 print(documents)
 
+#3. Document Specific Splitting - Markdown 
+
+print("Document Specific Splitting - Markdown")
+
+from langchain.text_splitter import MarkdownTextSplitter
+splitter = MarkdownTextSplitter(chunk_size = 40, chunk_overlap=0)
+markdown_text = """
+# Fun in California
+
+## Driving
+
+Try driving on the 1 down to San Diego
+
+### Food
+
+Make sure to eat a burrito while you're there
+
+## Hiking
+
+Go to Yosemite
+"""
+print(splitter.create_documents([markdown_text]))
+
+# Document Specific Splitting - Python
+from langchain.text_splitter import PythonCodeTextSplitter
+python_text = """
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+
+    return a - b
+"""
+splitter = PythonCodeTextSplitter(chunk_size = 40, chunk_overlap=0)
+print(splitter.create_documents([python_text]))
+
+
+
+#Document Specific Splitting - JavaSript
+from langchain.text_splitter import RecursiveCharacterTextSplitter, Language
+
+javascript_text = """
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+let x=myFunction(4, 3);
+"""
+splitter = RecursiveCharacterTextSplitter.from_language(chunk_size = 60, chunk_overlap=0, language=Language.JS)
+
+print(splitter.create_documents([javascript_text]))
+
+
+# 4. Semantic Chunking
+
 
 

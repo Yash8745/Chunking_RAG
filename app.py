@@ -138,6 +138,21 @@ print(splitter.create_documents([javascript_text]))
 
 
 # 4. Semantic Chunking
+print("Semantic Chunking")
+
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain_ollama import OllamaEmbeddings
+embeddings = OllamaEmbeddings(model="nomic-embed-text")
+
+text_splitter = SemanticChunker(embeddings=embeddings)
+
+documents=text_splitter.create_documents([file_text],metadatas=[{"Source":"semantic_chunking"}])
+
+print(documents)
+
+
+# 5. Agentic Chunking
+
 
 
 

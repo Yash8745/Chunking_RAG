@@ -53,3 +53,32 @@ print(documents)
 
 
 
+# Automatic Text Splitting
+"""
+1. The following code demonstrates how to use the langchain text splitter to automatically split the text into chunks.
+2. It devides the text into chunks of 35 characters each with an overlap of 5 characters between the chunks.
+3. It is fixed size so words might get split between chunks.
+"""
+
+from langchain.text_splitter import CharacterTextSplitter
+text_splitter = CharacterTextSplitter(chunk_size=35, chunk_overlap=5, separator="", strip_whitespace=False)
+documents=text_splitter.create_documents([text],metadatas=[{"Source":"local"}])
+print(documents)
+
+
+#2. Recursive Character Text Splitting
+
+print("Recursive Character Text Splitting")
+
+with open("sample_data.txt", "r") as file:
+    file_text = file.read()
+
+print(file_text)
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=350, chunk_overlap=50)
+documents=text_splitter.create_documents([file_text],metadatas=[{"Source":"local"}])
+print(documents)
+
+
+
